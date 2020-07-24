@@ -1,0 +1,4 @@
+Please notice PyOnly uses Tornado.
+Tornado is a Python web framework and asynchronous networking library.
+It is licensed under the Apache License 2.0 (https://github.com/tornadoweb/tornado/blob/master/LICENSE). 
+A copy of this license can be found in the LICENSE file in this directory.
