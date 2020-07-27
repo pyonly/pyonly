@@ -1,0 +1,9 @@
+README.md
+setup.py
+pyonly/__init__.py
+pyonly/document.py
+pyonly/handler.py
+pyonly.egg-info/PKG-INFO
+pyonly.egg-info/SOURCES.txt
+pyonly.egg-info/dependency_links.txt
+pyonly.egg-info/top_level.txt
