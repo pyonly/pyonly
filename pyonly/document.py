@@ -1,5 +1,5 @@
 from pyonly import element
-
+from pyonly import collection
 
 # This Document class simulates the HTML DOM document object.
 class Document:
@@ -11,6 +11,28 @@ class Document:
                                                     # that returns the element that has the ID attribute with the specified value.
                                                     # Furthermore an HTML_Element object is created including all methods/(properties) related to an HTML element.
         return element.HTML_Element(self.window, "document.getElementById('" + id + "')")
+    
+    async def getElementsByClassName(self, name):   # This method is similar to the document.getElementsByClassName() JavaScript method that returns a HTMLCollection object.
+                                                    # Additionally, the update method of the HTMLCollection object must be executed
+                                                    # so that the number of the contained HTML elements can be assigned to the len property.
+        htmlCollection = collection.HTMLCollection(self.window, "document.getElementsByClassName('" + name + "')")
+        await htmlCollection.update()
+        return htmlCollection
+    
+    async def getElementsByTagName(self, name):     # This method is similar to the document.getElementsByTagName() JavaScript method.
+        htmlCollection = collection.HTMLCollection(self.window, "document.getElementsByTagName('" + name + "')")
+        await htmlCollection.update()
+        return htmlCollection
+    
+    async def getElementsByTagNameNS(self, name):   # This method simulates the document.getElementsByTagNameNS() JavaScript method.
+        htmlCollection = collection.HTMLCollection(self.window, "document.getElementsByTagNameNS('" + name + "')")
+        await htmlCollection.update()
+        return htmlCollection
+    
+    async def getElementsByName(self, name):        # This method simulates the document.getElementsByName() JavaScript method.
+        htmlCollection = collection.HTMLCollection(self.window, "document.getElementsByName('" + name + "')")
+        await htmlCollection.update()
+        return htmlCollection
     
     def createElement(self, tagName):               # This method is similar to the document.createElement() JavaScript method
                                                     # that creates an Element Node with the specified name.
